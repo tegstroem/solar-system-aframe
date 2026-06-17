@@ -1,3 +1,19 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const scene = document.querySelector('a-scene');
+  
+  // Enable VR mode button
+  scene.setAttribute('vr-mode-ui', 'enabled: true');
+  
+  // Handle VR session
+  scene.addEventListener('enter-vr', function() {
+    console.log('Entered VR mode');
+  });
+  
+  scene.addEventListener('exit-vr', function() {
+    console.log('Exited VR mode');
+  });
+});
+
 const PLANET_DATA = {
   sun: {
     name: 'Sun',
@@ -443,4 +459,9 @@ document.addEventListener('click', function(event) {
       soundComp.playSound();
     }
   }, 0);
+});
+
+document.querySelector('a-scene').addEventListener('loaded', function() {
+  const sound = document.getElementById('ambient-sound');
+  sound.components.sound.playSound();
 });
