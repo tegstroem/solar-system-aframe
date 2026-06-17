@@ -430,3 +430,17 @@ function sceneToggleOrbit(sceneEl) {
   system.syncToggleButton();
   system.updateSpeedLabel();
 }
+
+document.addEventListener('click', function(event) {
+  const clickSound = document.getElementById('globalClickSound');
+  if (!clickSound) return;
+  
+  // Wait a frame to ensure component is ready
+  setTimeout(() => {
+    const soundComp = clickSound.components.sound;
+    if (soundComp) {
+      soundComp.stopSound();
+      soundComp.playSound();
+    }
+  }, 0);
+});

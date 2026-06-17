@@ -7,9 +7,15 @@
   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/solar-system.js"></script>
+  <style> @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Science+Gothic:wght@100..900&display=swap'); </style>
+
+
+
 </head>
 
 <body>
+
+  <div id="film-grain"></div>
   <div id="hud">
     <div id="info-panel" class="hidden">
       <button id="close-panel" type="button" aria-label="Close panel">&times;</button>
@@ -41,13 +47,26 @@
     starfield="count: 2500"
     renderer="colorManagement: true"
     background="color: #000000">
-
+    
   <a-sound 
     src="url(./assets/masseffect-audio.mp3)"
     autoplay="true"
     loop="true"
-    volume="3">
+    volume="0.5">
   </a-sound>
+
+   <a-entity id="globalClickSound" sound="src: url(./assets/click.mp3); autoplay: false;"></a-entity>
+
+ <a-entity position="0 1.6 -4">
+ <a-sphere radius="0.5" color="#ffaa00"></a-sphere>
+ </a-entity>
+
+
+ <div id="window-overlay">
+ <img src="./assets/window.png" alt="Window frame">
+ </div>
+
+
 
     <a-entity id="camera-rig" position="0 35 90">
       <a-camera
