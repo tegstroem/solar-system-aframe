@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/solar-system.js"></script>
 </head>
+
 <body>
   <div id="hud">
     <div id="info-panel" class="hidden">
@@ -41,7 +42,12 @@
     renderer="colorManagement: true"
     background="color: #000000">
 
-<a-sound></a-sound>
+  <a-sound 
+    src="url(./assets/masseffect-audio.mp3)"
+    autoplay="true"
+    loop="true"
+    volume="3">
+  </a-sound>
 
     <a-entity id="camera-rig" position="0 35 90">
       <a-camera
@@ -51,11 +57,11 @@
         camera="near: 0.05; far: 2000"
         raycaster="objects: .planet-body; far: 1000">
         <a-cursor
-          id="cursor"
-          fuse="false"
-          material="color: #88ccff; shader: flat"
-          geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.025"
-          position="0 0 -1">
+        id="cursor"
+        fuse="false"
+        material="color: #D53939; shader: standard; emissive: #D53939; emissiveIntensity: 2.7"
+        geometry="primitive: ring; radiusInner: 0.025; radiusOuter: 0.035"
+        position="0 0 -1">
         </a-cursor>
       </a-camera>
     </a-entity>
