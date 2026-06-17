@@ -1,0 +1,9 @@
+{
+  "name": "solar-system-aframe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive A-Frame solar system in black space",
+  "scripts": {
+    "start": "npx --yes serve . -l 3000"
+  }
+}
